@@ -1,7 +1,7 @@
 PFont font;
 int Xscore = 0;
 int Oscore = 0;
-int turn = 0;
+int turn = 1;
 int mode = 0;
 int light;
 int dark;
@@ -15,8 +15,10 @@ int r2c3 = 0;
 int r3c1 = 0;
 int r3c2 = 0;
 int r3c3 = 0;
+boolean over = false;
 
 void setup(){
+  ellipseMode(CORNERS);
   modeDraw();
   size(450,550);
   rectMode(CORNERS);
@@ -32,6 +34,7 @@ void draw(){
     light = 255;
     dark = 0;
   }
+  rect(0,0,width,height);
   rect(0,0,15,15);
   rect(35,65,65,35);
   rect(385,65,415,35);
@@ -74,6 +77,7 @@ void mouseClicked() {
   }
   modeSwap();
   gamePlayClick();
+  score();
 }
 void modeSwap(){
   if(mouseX<275&&mouseX>175&&mouseY<75&&mouseY>25){
@@ -104,7 +108,3 @@ void modeDraw(){
   fill(light);
   stroke(dark);
 }
-
-void Xwin(){}
-
-void Owin(){}
