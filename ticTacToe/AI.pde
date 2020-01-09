@@ -8,6 +8,7 @@ void AI() {
       if (enemyCanWin()) {
         contextMove();
       } 
+      if (turn == 2) {
         playRandom();
       }
     } else if (chance == 1) {
